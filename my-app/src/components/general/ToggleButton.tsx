@@ -1,18 +1,28 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import {FiSun, FiMoon} from 'react-icons/fi';
 
 const ToggleButton: React.FC = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme ,resolvedTheme} = useTheme();
+  const [Mounted, setMounted] = useState(false);
+
+  useEffect(()=>{
+    setMounted(true);
+  },[]);
+
+    if(!Mounted) return null;
+
+   const currentTheme = resolvedTheme || theme;
 
   return (
     <button
     type="button"
-      onClick={() => setTheme(theme === "dark"? "light" : "dark")}
-      className="px-3 py-1 bg-gray-300 dark:bg-gray-700 rounded text-gray-800 dark:text-gray-100 hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors"
+      onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
+      className="p-2 ml-2  rounded-full hover:text-white  cursor-pointer dark:text-gray-100 hover:bg-blue-700 text-black  transition-colors"
     >
-      {theme === "dark"? "Light" : "Dark"} 
+      {currentTheme === "dark" ? <FiSun size={16} /> : <FiMoon size={16} />}
     </button>
   );
 };
