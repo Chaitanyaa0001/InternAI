@@ -1,6 +1,6 @@
 import AppNavbar from "@/components/navbar/AppNavbar";
 
-export default function uploadresume(){
+export default function aimentorroute() {
     return (
         <AppNavbar/>
     )

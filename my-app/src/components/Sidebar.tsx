@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { Home, Compass, Briefcase, User, Upload, Sparkles, X } from "lucide-react";
+import { Home, Compass, Briefcase,  Upload, X, Headphones,LogOut,Brain } from "lucide-react";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -27,33 +27,33 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
           {/* Navigation */}
           <nav className="space-y-2">
-            <Link href="/studentdashboard" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-100 dark:text-white">
+            <Link href="/student/dashboard" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
               <Home size={20} /> Dashboard
             </Link>
-            <Link href="/recommendation" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-100 dark:text-white">
+            <Link href="/student/recommendation" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
               <Compass size={20} /> AI Recommendations
             </Link>
-            <Link href="/internships" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-100 dark:text-white">
+            <Link href="/student/internships" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600  hover:text-white dark:text-white">
               <Briefcase size={20} /> Browse Internships
             </Link>
-            <Link href="/uploadresume" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-100 dark:text-white">
+            <Link href="/student/uploadresume" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
               <Upload size={20} /> Upload Resume
             </Link>
-            <Link href="/profile" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-100 dark:text-white">
-              <User size={20} /> Profile
+            <Link href="/student/aimentor" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
+              <Brain size={20} /> AI Mentor   
             </Link>
           </nav>
         </div>
 
         {/* Quick Actions */}
         <div className="border-t pt-4">
-          <h2 className="text-sm font-semibold text-gray-500 mb-3">Quick Actions</h2>
+          <h2 className="text-sm font-semibold text-gray-500 mb-3 ">Quick Actions</h2>
           <div className="space-y-2">
             <button type="button" className="w-full flex items-center gap-3 p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
-              <Sparkles size={20} /> Get AI Suggestions
+              <Headphones size={20} /> Help Center
             </button>
             <button type="button" className="w-full flex items-center gap-3 p-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition">
-              <Upload size={20} /> Upload Resume
+                <LogOut size={20} /> Logout
             </button>
           </div>
         </div>
