@@ -12,7 +12,7 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="my-3">
+    
 
     
     <form className="space-y-4" onSubmit={handleSubmit}>
@@ -125,7 +125,6 @@ const SignupForm = () => {
         </Link>
       </p>
     </form>
-    </div>
   );
 };
 
