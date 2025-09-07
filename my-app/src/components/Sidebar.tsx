@@ -52,9 +52,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             <button type="button" className="w-full flex items-center gap-3 p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
               <Headphones size={20} /> Help Center
             </button>
+            <Link href= '/'>
             <button type="button" className="w-full flex items-center gap-3 p-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition">
                 <LogOut size={20} /> Logout
             </button>
+            </Link>
+            
           </div>
         </div>
       </aside>

@@ -1,3 +1,5 @@
+export type InternshipStatus = "Not Applied" | "Applied" | "Accepted" | "Rejected";
+
 export default interface InternshipCardProps {
   id: number;
   position: string;
@@ -6,7 +8,8 @@ export default interface InternshipCardProps {
   duration: string;
   skills: string[];
   description: string;
-  status?: "Applied" | "Selected" | "Rejected"; 
-  showApplyButton?: boolean; // Browse + Recommendation,
-  clickable?: boolean
+  showApplyButton?: boolean;
+  clickable?: boolean;
+  status?: InternshipStatus;
+  linkTo?: string;
 }
