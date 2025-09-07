@@ -1,19 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import InternshipCardProps from "@/types/InternshipCardProps";
 
-interface RecommendationCardProps {
-  id: number;
-  position: string;
-  company: string;
-  location: string;
-  duration: string;
-  skills: string[];
-  description: string;
-  applicants?: string;
-}
-
-const RecommendationCard: React.FC<RecommendationCardProps> = ({
+const Card: React.FC<InternshipCardProps> = ({
   id,
   position,
   company,
@@ -21,10 +11,13 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
   duration,
   skills,
   description,
-  applicants = "0 applicants",
+  status,
+  showApplyButton = true,
+  clickable = false, 
+
 }) => {
-  return (
-    <div className="p-5 rounded-lg border dark:border-gray-700 bg-gray-50 dark:bg-[#0A0F1C] shadow flex flex-col justify-between">
+  const CardContent = (
+    <div className="p-5 rounded-lg border dark:border-gray-700 bg-gray-50 dark:bg-[#0A0F1C] shadow flex flex-col justify-between hover:shadow-lg transition">
       {/* Header */}
       <h3 className="text-lg font-semibold text-blue-600">{position}</h3>
 
@@ -33,12 +26,12 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
         {company} • {location} • {duration}
       </p>
 
-      
-
       {/* Description */}
       <p className="text-xs text-gray-500 dark:text-gray-400 mt-5 line-clamp-2">
         {description}
       </p>
+
+      {/* Skills */}
       <div className="flex flex-wrap gap-2 mt-5">
         {skills.map((skill, i) => (
           <span
@@ -52,18 +45,29 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
 
       {/* Footer */}
       <div className="flex justify-between items-center mt-4">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          {applicants}
-        </p>
-        <Link
-          href={`/studentdashboard/${id}`}
-          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm"
-        >
-          Apply Now
-        </Link>
+        <div className="text-xs text-gray-500 dark:text-gray-400">
+          {status && <span>Status: {status}</span>}
+        </div>
+
+        {showApplyButton && (
+          <Link
+            href={`/student/dashboard/${id}`}
+            className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm hover:bg-green-700"
+          >
+            Apply Now
+          </Link>
+        )}
       </div>
     </div>
   );
+
+  return clickable ? (
+    <Link href={`/student/dashboard/${id}`} className="block">
+      {CardContent}
+    </Link>
+  ) : (
+    CardContent
+  );
 };
 
-export default RecommendationCard;
+export default Card;

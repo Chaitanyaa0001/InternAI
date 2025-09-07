@@ -12,8 +12,7 @@ async function getInternshipData(id: string) {
       skills: ["Python", "TensorFlow", "Machine Learning", "Data Science"],
       description:
         "Join our AI team to develop cutting-edge machine learning models. Work on real-world problems and gain hands-on experience with the latest AI technologies.",
-      applicants: "45 applicants",
-      posted: "2 days ago",
+        status: "Applied"
     },
     {
       id: 2,
@@ -25,8 +24,7 @@ async function getInternshipData(id: string) {
       skills: ["React", "TypeScript", "Tailwind CSS", "JavaScript"],
       description:
         "Help build modern web applications using React and TypeScript. Perfect opportunity to learn from experienced developers in a fast-paced startup environment.",
-      applicants: "28 applicants",
-      posted: "5 days ago",
+        status:"Applied"
     },
   ];
 
@@ -51,7 +49,7 @@ export default async function ApplyPage({ params }: PageProps) {
     <div className=" h-full bg-gray-50 dark:bg-[#0A0F1C] text-gray-800 dark:text-gray-200 p-6 lg:p-16 flex flex-col gap-10">
       {/* Back Link */}
       <Link
-        href="/studentdashboard"
+        href="/student/dashboard"
         className="text-blue-600 dark:text-blue-400 font-medium underline hover:text-blue-800 dark:hover:text-blue-300 transition"
       >
         ← Back to Dashboard
@@ -105,15 +103,10 @@ export default async function ApplyPage({ params }: PageProps) {
 
       {/* Applicants Info */}
       <div className="flex justify-between items-center text-sm text-gray-500 dark:text-gray-400 mt-6">
-        <p>{cardData.applicants} • {cardData.posted}</p>
+        <p>{cardData.status} </p>
       </div>
 
-      {/* Apply Button */}
-      <div className="mt-8">
-        <button className="w-full md:w-1/3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-700 text-white rounded-2xl hover:from-green-600 hover:to-green-800 transition text-lg font-semibold shadow-lg">
-          Confirm Apply 🚀
-        </button>
-      </div>
+     
     </div>
   );
 }
