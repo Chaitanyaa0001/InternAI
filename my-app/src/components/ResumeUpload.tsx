@@ -18,11 +18,15 @@ export default function ResumeUpload() {
         score: 82,
         strengths: ["Python", "Machine Learning", "Data Analysis"],
         weaknesses: ["Communication Skills", "Team Management"],
-        keywords: ["AI", "ML", "Python", "Data Science", "TensorFlow"],
+        keywords: ["AI", "ML", "Python", "Data Science", "TensorFlow","AI", "ML", "Python", "Data Science", "TensorFlow","AI", "ML", "Python", "Data Science", "TensorFlow","AI", "ML", "Python", "Data Science", "TensorFlow"],
         improvements: [
           "Add measurable achievements",
           "Include leadership examples",
           "Optimize resume for ATS keywords",
+          "ejosjwebfojervoeorvoervoeofvoefajvojerfvoerofv",
+          "ovjernoufvqeoruovnuerwbvuoewbvuobwerovbo",
+          "edobvioaerbfvieralicvgiewraivkhewrvlebfshvjesbrouafvyhgbvafshlkvbgewuolrhafksbvuew",
+          "docbeqrifbrieflerferbvy"
         ],
       });
     }, 1000);
@@ -36,32 +40,22 @@ export default function ResumeUpload() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#0A0F1C] via-[#101828] to-[#1A2234] flex flex-col items-center py-12 px-4">
-      <div className="bg-white dark:bg-[#1A2234] rounded-xl shadow-2xl w-full max-w-4xl p-8">
-        {/* Upload Section */}
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold dark:text-white mb-4">Upload Your Resume</h1>
-          <input
-          aria-label="state"
-            type="file"
-            onChange={handleFileUpload}
-            className="block w-full text-sm text-gray-600
-              file:mr-4 file:py-2 file:px-4
-              file:rounded-full file:border-0
-              file:text-sm file:font-semibold
-              file:bg-blue-50 file:text-blue-700
-              hover:file:bg-blue-100"
-          />
-          <p className="mt-2 text-gray-600 dark:text-gray-300">
+    <main className="min-h-screen flex flex-col items-center ">
+      <div className="w-full">
+        <h1 className="  text-2xl mt-22 self-start font-bold text-blue-600 dark:text-blue-600 mb-2 sm:mt-25 lg:mt-1 ">Upload Your Resume</h1>
+          <p className=" text-gray-600 dark:text-gray-300">
             Upload your resume to get a detailed analysis with score, strengths, weaknesses, and suggestions.
           </p>
-        </div>
+      <div className="bg-white border-2 border-gray-200 dark:border-gray-200 mb-5 dark:bg-gradient-to-br from-[#0A0F1C] via-[#101828] to-[#1A2234]  rounded-xl shadow-2xl w-fit mt-5  px-6 pb-1  pt-8">
+        <div className="mb-8">
+          <input aria-label="state" type="file" onChange={handleFileUpload} className="block w-full text-sm text-gray-600  file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold  file:bg-blue-50 file:text-blue-700  hover:file:bg-blue-100"/>
+        </div>  
+      </div>
 
-        {/* Result Section */}
-        {result && (
-          <div className="bg-gray-50 dark:bg-[#0F172A] rounded-lg p-6 shadow-inner">
+      {result && (
+          <div className="bg-gray-50 dark:bg-[#0F172A] overflow-y-scroll rounded-lg p-6 shadow-inner">
             {/* Score */}
-            <div className="mb-6">
+            <div className="mb-6 ">
               <h2 className="text-xl font-semibold dark:text-white mb-2">Resume Score</h2>
               <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-8">
                 <div
@@ -77,7 +71,7 @@ export default function ResumeUpload() {
             </div>
 
             {/* Strengths & Weaknesses */}
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div className="grid  grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div className="bg-green-50 dark:bg-green-900 p-4 rounded-lg">
                 <h3 className="font-semibold text-green-800 dark:text-green-200 mb-2">Strongest Areas</h3>
                 <ul className="list-disc list-inside text-gray-800 dark:text-gray-200">
@@ -116,6 +110,7 @@ export default function ResumeUpload() {
           </div>
         )}
       </div>
+          
     </main>
   );
 }

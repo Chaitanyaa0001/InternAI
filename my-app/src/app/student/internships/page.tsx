@@ -1,10 +1,10 @@
-"use client";
 import AppNavbar from "@/components/navbar/AppNavbar";
-import Card from "@/components/Card";
 import InternshipCardProps from "@/types/InternshipCardProps";
+import BrowseInternshipsClient from "@/components/InternshipFilter";
 
-export default function BrowseInternships() {
-  const availableInternships = [
+export default function BrowseInternshipsPage() {
+  // Later fetch from DB / API
+  const availableInternships: InternshipCardProps[] = [
     {
       id: 1,
       position: "Frontend Developer Intern",
@@ -13,8 +13,7 @@ export default function BrowseInternships() {
       duration: "6 months",
       skills: ["React", "TypeScript", "Tailwind CSS", "JavaScript"],
       description: "Build modern web apps.",
-      status: "Not Applied"
-
+      status: "Not Applied",
     },
     {
       id: 2,
@@ -24,19 +23,15 @@ export default function BrowseInternships() {
       duration: "3 months",
       skills: ["Node.js", "Express", "MongoDB"],
       description: "Develop backend APIs.",
-      status: "Not Applied"
+      status: "Not Applied",
     },
-  ] satisfies InternshipCardProps[];
+  ];
 
   return (
     <div className="min-h-screen dark:bg-[#0A0F1C]">
       <AppNavbar />
-      <div className="mt-24 lg:ml-64 p-6">
-        <h1 className="text-2xl font-bold dark:text-white mb-6">Browse Internships</h1>
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-6">
-          {availableInternships.map((i) => <Card key={i.id} {...i} showApplyButton linkTo={`/student/internships/${i.id}`} />)}
-        </div>
-      </div>
+
+      <BrowseInternshipsClient internships={availableInternships} />
     </div>
   );
 }

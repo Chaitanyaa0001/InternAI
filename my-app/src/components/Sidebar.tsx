@@ -48,16 +48,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Quick Actions */}
         <div className="border-t pt-4">
           <h2 className="text-sm font-semibold text-gray-500 mb-3 ">Quick Actions</h2>
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
+            <Link href='/helpcenter'>
             <button type="button" className="w-full flex items-center gap-3 p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
               <Headphones size={20} /> Help Center
             </button>
+            </Link>
             <Link href= '/'>
             <button type="button" className="w-full flex items-center gap-3 p-2 rounded-lg bg-green-600 text-white hover:bg-green-700 transition">
                 <LogOut size={20} /> Logout
             </button>
             </Link>
-            
           </div>
         </div>
       </aside>
