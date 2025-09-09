@@ -12,7 +12,7 @@ export default function SignupRoute() {
   return (
     <main className="min-h-screen flex bg-white text-gray-900 dark:bg-[#1E2939] dark:text-gray-100 transition-colors relative">
       {/* Theme Toggle */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute  top-4 right-4">
         <ToggleButton />
       </div>
 
