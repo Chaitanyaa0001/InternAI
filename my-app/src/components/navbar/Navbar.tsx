@@ -7,11 +7,12 @@ const Navbar = () => (
   <nav className="bg-white dark:bg-gray-900 border-b border-gray-300 dark:border-gray-800 shadow-sm">
     <div className="flex justify-between items-center w-[90%] lg:w-[80%] mx-auto p-4">
       <div className="flex items-center space-x-2">
-        <Link href= '/profile' >
+        <Link href="/" className="cursor-pointer">
           <Image src="/logo.png" alt="Logo" width={60} height={50} />
-        </Link>
-        <h1 className="text-black font-semibold text-xl dark:text-white text-[1rem]">
-          Intern <span className="text-blue-700 text-[1rem]">AI</span>
+      </Link>
+
+        <h1 className="text-black font-semibold text-xl dark:text-white lg:text-xl text-[1rem]">
+          Intern <span className="text-blue-700 lg:text-xl text-[1rem]">AI</span>
         </h1>
       </div>
       <div className="hidden lg:flex items-center gap-4 text-[1em]">

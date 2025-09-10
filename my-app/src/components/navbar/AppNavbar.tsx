@@ -4,6 +4,7 @@ import { Menu } from "lucide-react";
 import Image from "next/image";
 import Sidebar from "../Sidebar";
 import ToggleButton from "../general/ToggleButton";
+import Link from "next/link";
 
 const AppNavbar: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -17,7 +18,9 @@ const AppNavbar: React.FC = () => {
       <div className="flex-1 flex flex-col  ">
         {/* Top Navbar */}
         <nav className="w-full fixed  px-8 bg-white border-b dark:border-gray-500  dark:bg-[#314DA2] dark:bg-gradient-to-b from-[#0A0F1C] via-[#101828] to-[#1A2234] dark:shadow-md  py-5 flex items-center justify-between ">
-          <Image height={50} width={50} src='/logo.png' alt="logo"/>
+          <Link href="/profile" className="cursor-pointer">
+            <Image height={50} width={50} src='/logo.png' alt="logo"/>
+          </Link>
           <h1 className="text-xl lg:text-2xl font-bold dark:text-white  ">Intern <span className="text-blue-700">AI</span> </h1>
 
           {/* Right side: profile + menu */}
