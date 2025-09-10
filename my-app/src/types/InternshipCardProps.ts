@@ -1,4 +1,4 @@
-export type InternshipStatus = "Not Applied" | "Applied" | "Accepted" | "Rejected";
+export type InternshipStatus = "Not Applied" | "Applied" | "Accepted" | "Rejected" ;
 
 export default interface InternshipCardProps {
   id: number;

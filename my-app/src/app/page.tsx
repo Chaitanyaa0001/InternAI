@@ -75,15 +75,17 @@ export default function Home() {
               Let AI match you with internships that fit your skills, interests, and career goals. 
               Join thousands of students who found their dream opportunities.
             </p>
-            <div className="flex flex-col items-center sm:flex-row lg:gap-10 w-full">
+            <div className="flex flex-col sm:gap-4  items-center sm:flex-row lg:gap-10 w-[100%]">
               <Link href="/login" className="w-full sm:w-auto">
                 <button type="button" className="bg-blue-700 px-4 py-3 w-full rounded-[7px] text-white font-semibold mt-4">
                   Start Finding Internships
                 </button>
               </Link>
-              <button type="button" className="border border-gray-200 rounded-[7px] w-full sm:w-[30%] lg:w-[20%] cursor-pointer px-5 py-3 mt-4 hover:bg-blue-700 hover:text-white text-[1rem] font-semibold">
-                Post Internships
-              </button>
+              <Link href= '/login'>
+                  <button type="button" className="border border-gray-200 rounded-[7px] w-full sm:w-[100%] lg:w-[100%] cursor-pointer px-5 py-3 mt-4 hover:bg-blue-700 hover:text-white text-[1rem] font-semibold">
+                    Post Internships
+                  </button>
+              </Link>
             </div>
           </div>
 
