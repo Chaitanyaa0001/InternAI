@@ -14,6 +14,7 @@ export default function postinternroute() {
                         <h1 className="text-xl sm:text-2xl font-semibold text-blue-700 italic">Post Internship</h1>
                         <p className="opacity-70  dark:text-white">Hire skilled candiates with experience</p>
                     </div>
+                    
                     <form action="" className="flex flex-col gap-2">
                         <h1 className="text-[1.1rem] italic dark:text-white">Position</h1>
                         <input aria-label="state" type="text" placeholder="Enter the position..." className="border-2  placeholder-gray-400 py-2 px-1 rounded-[8px] border-gray-300 focus:border-blue-600 outline-none"/>
