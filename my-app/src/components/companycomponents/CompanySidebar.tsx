@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Home, Briefcase, Upload, Users, X, LogOut, Headphones } from "lucide-react";
-
+import {  Upload, Users, X, LogOut, Headphones } from "lucide-react";
+// Home, Briefcase
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
@@ -28,12 +28,12 @@ const CompanySidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
           {/* Navigation */}
           <nav className="space-y-2">
-            <Link href="/company/dashboard" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
+            {/* <Link href="/company/dashboard" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
               <Home size={20} /> Dashboard
             </Link>
             <Link href="/company/manageinternship" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
               <Briefcase size={20} /> Manage Internships
-            </Link>
+            </Link> */}
             <Link href="/company/postinternship" className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-600 hover:text-white dark:text-white">
               <Upload size={20} /> Post Internship
             </Link>

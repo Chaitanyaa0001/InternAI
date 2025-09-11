@@ -91,7 +91,7 @@ export default function ProfileForm({ profile }: Props) {
               alt="Profile"
               className="rounded-full border-2 object-cover"
             />
-            <input type="file" accept="image/*" onChange={handleImageChange} className="hidden" />
+            <input aria-label="state" type="file" accept="image/*" onChange={handleImageChange} className="hidden" />
           </label>
 
           <div className="flex-1 flex flex-col gap-3 w-full">
@@ -101,7 +101,7 @@ export default function ProfileForm({ profile }: Props) {
                 type="text"
                 name={field}
                 placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                value={(formData as any)[field]}
+                value={(formData as never)[field]}
                 onChange={handleChange}
                 className="border-2 p-2 rounded-md w-full"
               />
@@ -109,7 +109,7 @@ export default function ProfileForm({ profile }: Props) {
 
             <div className="mt-2">
               <label className="font-semibold mb-1 block">Upload Resume</label>
-              <input type="file" accept=".pdf,.doc,.docx" onChange={handleResumeUpload} />
+              <input aria-label="state" type="file" accept=".pdf,.doc,.docx" onChange={handleResumeUpload} />
             </div>
           </div>
         </div>
